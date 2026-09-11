@@ -2,10 +2,24 @@ pipeline {
     agent any
 
     stages {
+
         stage('Hello') {
             steps {
                 bat 'echo Hello World'
             }
         }
+
+        stage('Check WSL') {
+            steps {
+                bat 'wsl --status'
+            }
+        }
+
+        stage('Check Ansible') {
+            steps {
+                bat 'wsl -d Ubuntu -- bash -lc "ansible --version"'
+            }
+        }
+
     }
 }
