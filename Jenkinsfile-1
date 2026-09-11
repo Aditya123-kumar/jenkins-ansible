@@ -1,15 +1,12 @@
 pipeline {
-  agent any
+    agent any
 
-  stages {
-    stage('Hello') {
-      steps {
-        sh '''
-          ansible --version
-          ansible-playbook --version
-          ansible-galaxy --version
-        '''
-      }
+    stages {
+        stage('Hello') {
+            steps {
+                bat 'echo Hello World'
+            }
+        }
     }
-  }
 }
+```
